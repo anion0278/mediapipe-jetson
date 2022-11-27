@@ -1,0 +1,6 @@
+absl-py
+attrs>=19.1.0
+matplotlib
+numpy==1.19.4
+opencv-python
+protobuf>=3.11.4
