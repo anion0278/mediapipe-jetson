@@ -20,7 +20,7 @@ $ pip3 uninstall -y mediapipe && sudo python3 setup.py gen_protos && sudo python
 ```
 
 ## Installation - Python Wheel
-Binary (v0.8.9) is available in https://github.com/anion0278/mediapipe/tree/master/dist. 
+Binary (v0.8.9) is available in https://github.com/anion0278/mediapipe-jetson/tree/master/dist. 
 ```bash
 ### Remove previous versions of Mediapipe (if it was installed):
 $ pip3 uninstall -y mediapipe
