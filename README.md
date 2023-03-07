@@ -15,17 +15,22 @@ Instructions are inspired by **[PINTO0309's](https://github.com/PINTO0309)** not
 ### Do not forget set g++8:
 $ sudo update-alternatives --config g++
 
-### Shortcut for fast test: 
+### Build: 
 $ pip3 uninstall -y mediapipe && sudo python3 setup.py gen_protos && sudo python3 setup.py bdist_wheel && python3 -m pip install dist/mediapipe-0.8.9_cuda102-cp36-cp36m-linux_aarch64.whl
 ```
 
-## Installation - Python Wheel
+## Installation (for clean Jetpack 4.6 - 4.6.1) - Python Wheel
 Binary (v0.8.9) is available in https://github.com/anion0278/mediapipe-jetson/tree/master/dist. 
 ```bash
+### Preparing pip
+$ sudo apt update
+$ sudo apt install python3-pip
+$ pip3 install --upgrade pip
 ### Remove previous versions of Mediapipe (if it was installed):
-$ pip3 uninstall -y mediapipe
-### Install new version with (run commands from mediapipe dir):
-$ python3 -m pip install dist/mediapipe-0.8.9_cuda102-cp36-cp36m-linux_aarch64.whl
+$ pip3 uninstall mediapipe
+### Install from wheel with (run commands from mediapipe dir):
+$ pip3 install protobuf==3.19.4 opencv-python dataclasses mediapipe-0.8.9_cuda102-cp36-linux_aarch64.whl
+### Note: Building wheel for opencv-python may take quite some time (up to few hours)!
 ```
 
 ## Running examples - notes
