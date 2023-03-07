@@ -7,18 +7,6 @@ Google's MediaPipe: https://github.com/google/mediapipe
 This repo represents fixes and instructions needed to sucessfully build latest MediaPipe for Jetson Nano with CUDA support.
 It additionally provides python wheel (aarch64) for immediate installation.
 
-## Compile from source (for new versions)
-Instructions are inspired by **[PINTO0309's](https://github.com/PINTO0309)** notes avaliable at **[Verification of mediapipe's GPU-enabled .pbtxt processing method](https://zenn.dev/pinto0309/scraps/71368ef3d74438)**.
-...Work In Progres...
-
-```bash
-### Do not forget set g++8:
-$ sudo update-alternatives --config g++
-
-### Build: 
-$ pip3 uninstall -y mediapipe && sudo python3 setup.py gen_protos && sudo python3 setup.py bdist_wheel && python3 -m pip install dist/mediapipe-0.8.9_cuda102-cp36-cp36m-linux_aarch64.whl
-```
-
 ## Installation (for clean Jetpack 4.6 - 4.6.1) - Python Wheel
 Binary (v0.8.9) is available in https://github.com/anion0278/mediapipe-jetson/tree/master/dist. 
 ```bash
@@ -29,8 +17,19 @@ $ pip3 install --upgrade pip
 ### Remove previous versions of Mediapipe (if it was installed):
 $ pip3 uninstall mediapipe
 ### Install from wheel with (run commands from mediapipe dir):
-$ pip3 install protobuf==3.19.4 opencv-python dataclasses mediapipe-0.8.9_cuda102-cp36-linux_aarch64.whl
-### Note: Building wheel for opencv-python may take quite some time (up to few hours)!
+$ pip3 install protobuf==3.19.4 opencv-python==4.5.3.56 dataclasses mediapipe-0.8.9_cuda102-cp36-linux_aarch64.whl
+### Note: Building wheel for newer version of opencv-python may take quite some time (up to few hours)!
+```
+
+## Compile from source (for new versions)
+Instructions are inspired by **[PINTO0309's](https://github.com/PINTO0309)** notes avaliable at **[Verification of mediapipe's GPU-enabled .pbtxt processing method](https://zenn.dev/pinto0309/scraps/71368ef3d74438)**.
+...Work In Progres...
+```bash
+### Do not forget set g++8:
+$ sudo update-alternatives --config g++
+
+### Build: 
+$ pip3 uninstall -y mediapipe && sudo python3 setup.py gen_protos && sudo python3 setup.py bdist_wheel && python3 -m pip install dist/mediapipe-0.8.9_cuda102-cp36-cp36m-linux_aarch64.whl
 ```
 
 ## Running examples - notes
