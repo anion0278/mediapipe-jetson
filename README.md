@@ -28,6 +28,12 @@ Instructions are inspired by **[PINTO0309's](https://github.com/PINTO0309)** not
 ### Do not forget set g++8:
 $ sudo update-alternatives --config g++
 
+### CUDA paths
+export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64,/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+sudo ldconfig
+
+
 ### Build: 
 $ pip3 uninstall -y mediapipe && sudo python3 setup.py gen_protos && sudo python3 setup.py bdist_wheel && python3 -m pip install dist/mediapipe-0.8.9_cuda102-cp36-cp36m-linux_aarch64.whl
 ```
