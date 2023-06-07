@@ -32,6 +32,7 @@ $ sudo update-alternatives --config g++
 export PATH=/usr/local/cuda-10.2/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64,/usr/local/cuda-10.2/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 sudo ldconfig
+export TF_CUDA_PATHS=/usr/local/cuda:/usr/lib/aarch64-linux-gnu:/usr/include
 
 
 ### Build: 
